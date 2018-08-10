@@ -25,3 +25,11 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Link utili
+
+https://www.npmjs.com/package/commitizen
+https://medium.com/@tomastrajan/how-to-build-responsive-layouts-with-bootstrap-4-and-angular-6-cfbb108d797b
+https://github.com/angular/angular-cli/wiki/generate-component
+https://github.com/angular/angular-cli/wiki/stories-proxy
+https://github.com/angular/angular-cli/wiki/stories-global-styles

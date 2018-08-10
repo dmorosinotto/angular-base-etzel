@@ -1,16 +1,29 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
+import { HttpClient, HttpClientModule } from "@angular/common/http";
 
-import { AppComponent } from './app.component';
+import { AppComponent } from "./app.component";
+import { ModuleCacheService } from "./services/cache.service";
+import { TOKEN_CONF, Conf } from "./services/Config";
+import { ShowSecretComponent } from './components/show-secret/show-secret.component';
 
 @NgModule({
-  declarations: [
-    AppComponent
+  declarations: [AppComponent, ShowSecretComponent],
+  imports: [BrowserModule, HttpClientModule],
+  providers: [
+    ModuleCacheService, //<-- SHORT DI {provide: ModuleCacheService, useClass: ModuleCacheService  } //USA TIPO COME TOKEN E POI ISTANZA DI CLASSE
+    { provide: "USER", useValue: { name: "Etzel", surname: "" } },
+    {
+      provide: TOKEN_CONF,
+      useFactory: () => JSON.parse(sessionStorage.getItem("SECRET")) as Conf
+    },
+    {
+      provide: "CONFIG",
+      useFactory: http => http.get("http://getconfig"),
+      deps: [HttpClient]
+    },
+    { provide: "SUEPRUSER-ALIAS", useExisting: "USER" }
   ],
-  imports: [
-    BrowserModule
-  ],
-  providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
