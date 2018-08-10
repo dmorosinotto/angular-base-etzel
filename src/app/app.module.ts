@@ -9,7 +9,8 @@ import { ShowSecretComponent } from "./components/show-secret/show-secret.compon
 import { TablePageComponent } from "./components/table-page/table-page.component";
 import { PaginatorService } from "./services/paginator.service";
 import { TableHeaderComponent } from "./components/table-header/table-header.component";
-import { PageBtnComponent } from './components/page-btn/page-btn.component';
+import { PageBtnComponent } from "./components/page-btn/page-btn.component";
+import { ToolboxModule } from "./toolbox/toolbox.module";
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { PageBtnComponent } from './components/page-btn/page-btn.component';
     TableHeaderComponent,
     PageBtnComponent
   ],
-  imports: [BrowserModule, HttpClientModule],
+  imports: [BrowserModule, HttpClientModule, ToolboxModule],
   providers: [
     ModuleCacheService, //<-- SHORT DI {provide: ModuleCacheService, useClass: ModuleCacheService  } //USA TIPO COME TOKEN E POI ISTANZA DI CLASSE
     { provide: "USER", useValue: { name: "Etzel", surname: "" } },
