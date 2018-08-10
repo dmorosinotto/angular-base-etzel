@@ -5,10 +5,20 @@ import { HttpClient, HttpClientModule } from "@angular/common/http";
 import { AppComponent } from "./app.component";
 import { ModuleCacheService } from "./services/cache.service";
 import { TOKEN_CONF, Conf } from "./services/Config";
-import { ShowSecretComponent } from './components/show-secret/show-secret.component';
+import { ShowSecretComponent } from "./components/show-secret/show-secret.component";
+import { TablePageComponent } from "./components/table-page/table-page.component";
+import { PaginatorService } from "./services/paginator.service";
+import { TableHeaderComponent } from "./components/table-header/table-header.component";
+import { PageBtnComponent } from './components/page-btn/page-btn.component';
 
 @NgModule({
-  declarations: [AppComponent, ShowSecretComponent],
+  declarations: [
+    AppComponent,
+    ShowSecretComponent,
+    TablePageComponent,
+    TableHeaderComponent,
+    PageBtnComponent
+  ],
   imports: [BrowserModule, HttpClientModule],
   providers: [
     ModuleCacheService, //<-- SHORT DI {provide: ModuleCacheService, useClass: ModuleCacheService  } //USA TIPO COME TOKEN E POI ISTANZA DI CLASSE
@@ -23,6 +33,7 @@ import { ShowSecretComponent } from './components/show-secret/show-secret.compon
       deps: [HttpClient]
     },
     { provide: "SUEPRUSER-ALIAS", useExisting: "USER" }
+    //, PaginatorService
   ],
   bootstrap: [AppComponent]
 })

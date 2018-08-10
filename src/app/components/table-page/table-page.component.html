@@ -1,0 +1,9 @@
+<div>
+  table-page works!
+  <h1>
+    <ng-content></ng-content>
+  </h1>
+  <cmp-page-btn txt="<" (onPress)="handleClick($event)"></cmp-page-btn>
+  <span>{{page.currPage}} / {{page.totalPag}}</span>
+  <cmp-page-btn txt=">" (onPress)="handleClick($event)"></cmp-page-btn>
+</div>
