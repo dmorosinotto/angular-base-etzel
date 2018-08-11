@@ -33,3 +33,4 @@ https://medium.com/@tomastrajan/how-to-build-responsive-layouts-with-bootstrap-4
 https://github.com/angular/angular-cli/wiki/generate-component
 https://github.com/angular/angular-cli/wiki/stories-proxy
 https://github.com/angular/angular-cli/wiki/stories-global-styles
+https://github.com/angular/angular-cli/wiki/stories-create-library LIBRERIE DA SISTEMARE

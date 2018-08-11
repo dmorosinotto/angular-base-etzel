@@ -46,10 +46,8 @@
             "tsConfig": "src/tsconfig.app.json",
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
-              //"node_modules/bootstrap/dist/css/bootstrap-reboot.min.css",
-              //"node_modules/bootstrap/dist/css/bootstrap-grid.min.css",
-              "src/css/minty/bootstrap.min.css", //BOOSTWATCH MINTY THEME
-              "src/css/legacy.css", //ESEMPIO LEGACY CSS (INCLUSO POI NEL BUNDLE)
+              "src/css/minty/bootstrap.min.css",
+              "src/css/legacy.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -78,7 +76,6 @@
             }
           }
         },
-
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
@@ -90,6 +87,21 @@
             "production": {
               "browserTarget": "primaApp:build:production"
             }
+          }
+        }
+      }
+    },
+    "mylib": {
+      "root": "projects/mylib",
+      "sourceRoot": "projects/mylib/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "targets": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/mylib/tsconfig.lib.json",
+            "project": "projects/mylib/ng-package.json"
           }
         }
       }

@@ -12,4 +12,5 @@ export class SearchBoxComponent implements OnInit {
 
   @Output()
   doSearch = new EventEmitter<string>();
+  search: string;
 }

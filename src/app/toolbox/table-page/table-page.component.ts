@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from "@angular/core";
-import { PaginatorService } from "../../services/paginator.service";
+import { PaginatorService } from "./paginator.service";
 
 @Component({
   selector: "cmp-table-page",
